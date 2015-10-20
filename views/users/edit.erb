@@ -1,0 +1,12 @@
+<h1>Edit Profile Information for: <%= @user.email %></h1>
+<form method="post" action="/users/<%= @user.id %>">
+	<input type="hidden" name="_method" value="patch">
+	First Name: <input type="text" name="first_name" value="<%= @user.first_name %>"><br>
+	Last Name: <input type="text" name="last_name" value="<%= @user.last_name %>"><br>
+	Last Name: <input type="text" name="email" value="<%= @user.email %>"><br>
+	<input type="submit" name="submit" value="Update Account">
+</form>
+<form method="post" action="/users/<%= @user.id %>">
+	<input type="hidden" name="_method" value="delete">
+	<input type="submit" value="Delete Account">
+</form>
