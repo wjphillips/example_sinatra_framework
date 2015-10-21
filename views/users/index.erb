@@ -2,3 +2,9 @@
 <% @users.each do |u| %>
 	<p><%= u.first_name %> <%= u.last_name %></p>
 <% end %>
+<% if session[:user_id] %>
+<form method="post" action="/sessions/<%= session[:user_id] %>">
+	<input type="hidden" name="_method" value="delete">
+	<input type="submit" value="Log Out">
+</form>
+<% end %>

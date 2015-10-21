@@ -31,3 +31,9 @@ def create_user(name)
   user.save
   return user
 end
+def sign_in(user)
+  visit '/sessions/new'
+  fill_in 'email', with: user.email
+  fill_in 'password', with: 'password'
+  click_button 'Log In'
+end
